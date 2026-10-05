@@ -1,0 +1,21 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "shitfixes"
+version = "${file.jarVersion}"
+displayName = "Shitfixes"
+displayTest = "IGNORE_ALL_VERSION"
+description = "Fixes for things other mods break in the neko and Starsoul packs."
+authors = "deniz.blue"
+
+[[dependencies.shitfixes]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "shitfixes.mixins.json"

@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "blue.deniz.shitfixes.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "RecordRegistryWriterThreadsMixin"
+  ],
+  "client": [
+    "CameraRotationMixin",
+    "EmfAnimationBeforeFiguraMixin",
+    "FlashbackExporterRegistryIdsMixin",
+    "FlashbackRecorderClientOnlySoundsMixin",
+    "FlashbackRecorderRegistryIdsMixin",
+    "FlashbackRegistryNamespacesMixin",
+    "FlashbackReplayRegistryIdsMixin",
+    "KeepTextureAtlasesMixin",
+    "RecordSableUdpMovementMixin",
+    "RegistrySnapshotAccessor",
+    "SkipServerCoreMoveToSpawnInReplayMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
