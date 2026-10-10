@@ -3,7 +3,7 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.147'
 }
 
-version = '1.0.14'
+version = '1.0.15'
 group = 'blue.deniz.shitfixes'
 base { archivesName = 'shitfixes' }
 
