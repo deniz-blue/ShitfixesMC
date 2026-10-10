@@ -3,7 +3,7 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.147'
 }
 
-version = '1.0.13'
+version = '1.0.14'
 group = 'blue.deniz.shitfixes'
 base { archivesName = 'shitfixes' }
 
@@ -19,4 +19,8 @@ neoForge {
 dependencies {
     compileOnly files('libs/mixinsquared-fabric-0.3.7-beta.1.jar')
     compileOnly files('libs/sable-neoforge-1.21.1-2.0.5.jar')
+}
+
+jar {
+    manifest.attributes('Implementation-Version': project.version)
 }

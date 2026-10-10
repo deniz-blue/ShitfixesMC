@@ -1,6 +1,7 @@
 package blue.deniz.shitfixes.mixin;
 
 import blue.deniz.shitfixes.RegistryWriterThreads;
+import blue.deniz.shitfixes.UnreachableRegistryEntries;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.core.Holder;
@@ -15,7 +16,10 @@ abstract class RecordRegistryWriterThreadsMixin<T> {
     @WrapMethod(method = "register(ILnet/minecraft/resources/ResourceKey;Ljava/lang/Object;Lnet/minecraft/core/RegistrationInfo;)Lnet/minecraft/core/Holder$Reference;")
     private Holder.Reference<T> shitfixes$recordRegister(
             int id, ResourceKey<T> key, T value, RegistrationInfo info, Operation<Holder.Reference<T>> original) {
-        return RegistryWriterThreads.recordWrite((Registry<?>) (Object) this, () -> original.call(id, key, value, info));
+        Registry<T> registry = (Registry<T>) (Object) this;
+        Holder.Reference<T> registered = RegistryWriterThreads.recordWrite(registry, () -> original.call(id, key, value, info));
+        UnreachableRegistryEntries.reportIfUnreachableOnceRegistered(registry, registered);
+        return registered;
     }
 
     @WrapMethod(method = "getOrCreateHolderOrThrow")
