@@ -11,15 +11,7 @@
     "CameraRotationMixin",
     "DesiresPartialModelsBeforeFlywheelMixin",
     "EmfAnimationBeforeFiguraMixin",
-    "FlashbackExporterRegistryIdsMixin",
-    "FlashbackRecorderClientOnlySoundsMixin",
-    "FlashbackRecorderRegistryIdsMixin",
-    "FlashbackRegistryNamespacesMixin",
-    "FlashbackReplayRegistryIdsMixin",
-    "KeepTextureAtlasesMixin",
-    "RecordSableUdpMovementMixin",
-    "RegistrySnapshotAccessor",
-    "SkipServerCoreMoveToSpawnInReplayMixin"
+    "KeepTextureAtlasesMixin"
   ],
   "injectors": {
     "defaultRequire": 1
